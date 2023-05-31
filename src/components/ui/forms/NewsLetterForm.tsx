@@ -5,10 +5,14 @@ import { REGEX_EMAIL } from "@/components/utils/regex";
 import Button from "../buttons/Button";
 import { Grid } from "@mui/material";
 
-const title = `Sign up to stay up to date with what we build.`;
+const defaultTitle = `Sign up to stay up to date with what we build.`;
 const buttonLabel = `Sign me up!`;
 
-export default function NewsLetterForm({ loading, onSubmit }: FormProps) {
+export default function NewsLetterForm({
+  loading,
+  onSubmit,
+  title,
+}: FormProps) {
   // React Hook Form variables
   const {
     control,
@@ -21,7 +25,7 @@ export default function NewsLetterForm({ loading, onSubmit }: FormProps) {
       onSubmit={handleSubmit(onSubmit)}
       className="flex self-center items-center flex-col w-fit gap-4"
     >
-      <div className="text-[24px]">{title}</div>
+      <div className="text-[24px]">{title || defaultTitle}</div>
       <div className="flex w-full gap-4">
         <TextField
           control={control}

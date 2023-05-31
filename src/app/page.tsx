@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <div className="flex flex-col self-center justify-center text-center max-w-4xl">
-      <h1 className="text-[80px]">{title}</h1>
+      <h1 className="text-[72px]">{title}</h1>
       <div className="text-[24px]">{subtitle}</div>
     </div>
   );
