@@ -17,7 +17,7 @@ const muiTheme = createTheme({
       styleOverrides: {
         root: {
           color: "white",
-          backgroundColor: "rgb(0, 0, 0, 0.4)",
+          backgroundColor: "#173F5F",
         },
         input: {
           "&::placeholder": {

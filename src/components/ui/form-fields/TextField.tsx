@@ -51,7 +51,11 @@ export default function TextField({
 }: TextFieldProps) {
   return (
     <ThemeProvider theme={muiTheme}>
-      <div className={`w-full ${errors && (errors[`${name}`] ? "" : "pb-5")}`}>
+      <div
+        className={`w-full rounded-lg ${
+          errors && (errors[`${name}`] ? "" : "pb-5")
+        }`}
+      >
         <Controller
           name={name}
           control={control}

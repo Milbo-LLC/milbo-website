@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import Page from "@/components/ui/pages/Page";
 import { Grid } from "@mui/material";
-import { IconBaseProps, IconType } from "react-icons";
+import { IconType } from "react-icons";
 import { MdLightbulb, MdPeople, MdShield, MdVpnKey } from "react-icons/md";
+import NewsLetterForm from "@/components/ui/forms/NewsLetterForm";
 
 const Header = () => {
   const title = `Building the future.`;
@@ -13,14 +15,6 @@ const Header = () => {
     <div className="flex flex-col self-center justify-center text-center max-w-4xl">
       <h1 className="text-[80px]">{title}</h1>
       <div className="text-[24px]">{subtitle}</div>
-    </div>
-  );
-};
-
-const NewsLetterForm = () => {
-  return (
-    <div>
-      <div>News Letter Form</div>
     </div>
   );
 };
@@ -90,12 +84,17 @@ const CoreValues = () => {
 };
 
 export default function Home() {
+  const [loading, setLoading] = useState(false);
+
+  const onNewsLetterFormSubmit = () => {
+    console.log("submitted news letter form.");
+  };
   return (
     <Page>
       <div className="flex flex-col w-full items-center">
         <div className="flex flex-col max-w-4xl gap-16">
           <Header />
-          {/* <NewsLetterForm /> */}
+          <NewsLetterForm loading={loading} onSubmit={onNewsLetterFormSubmit} />
           <CoreValues />
         </div>
       </div>
