@@ -15,12 +15,11 @@ interface TabsProps {
 }
 
 export default function Tabs({ tabs }: TabsProps) {
-  // const currentPath = usePathname();
+  const currentPath = usePathname();
   return (
     <div className="flex gap-2">
       {tabs.map(({ label, link, className }) => {
-        // const onPath = link === currentPath; // True if tab corresponds to current path
-        const onPath = false;
+        const onPath = link === currentPath; // True if tab corresponds to current path
         return (
           <Link className={`flex items-center `} key={label} href={link}>
             <motion.div
