@@ -1,12 +1,20 @@
+"use client";
+
 import Page from "@/components/ui/pages/Page";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const title = `Terms of Serivce.`;
 
   return (
-    <div className="flex flex-col self-center justify-center text-center max-w-4xl">
+    <motion.div
+      className="flex flex-col self-center justify-center text-center max-w-4xl gap-4 sm:gap-16"
+      initial={{ opacity: 0, scale: 0.6 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0 }}
+    >
       <h1 className="text-[72px] leading-none sm:leading-4">{title}</h1>
-    </div>
+    </motion.div>
   );
 };
 
@@ -83,7 +91,11 @@ const Terms = () => {
   const title = `This Terms of Service Agreement ("Agreement") is entered into between Milbo LLC ("Milbo," "we," or "us") and you ("User" or "you") as the user of Milbo's services and website. By accessing or using our services and website, you agree to be bound by the terms and conditions outlined in this Agreement.`;
   const lastUpdate = `June 1, 2023`;
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 150 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 100, damping: 30 }}
+    >
       <div className="flex flex-col gap-8">
         <div>{title}</div>
         <div className="self-center">{`Last updated on ${lastUpdate}`}</div>
@@ -103,7 +115,7 @@ const Terms = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -111,7 +123,7 @@ export default function TermsOfService() {
   return (
     <Page>
       <div className="flex flex-col w-full items-center">
-        <div className="flex flex-col max-w-4xl gap-8">
+        <div className="flex flex-col max-w-4xl gap-4 sm:gap-16">
           <Header />
           <Terms />
         </div>
