@@ -74,7 +74,7 @@ export default function Products() {
   return (
     <Page>
       <div className="flex flex-col w-full items-center">
-        <div className="flex flex-col max-w-4xl gap-16">
+        <div className="flex flex-col max-w-4xl gap-8">
           <Header />
           <NewsLetterForm
             loading={loading}
