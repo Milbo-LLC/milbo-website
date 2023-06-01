@@ -20,7 +20,3 @@ export default function Page({ children }: PageProps) {
     </div>
   );
 }
-
-// <div className="flex h-full w-full py-8 px-2 sm:px-4">
-//   {children}
-// </div>;
