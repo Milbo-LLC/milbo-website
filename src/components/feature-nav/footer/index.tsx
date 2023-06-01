@@ -23,7 +23,7 @@ const tabs = [
 ];
 
 // Copyright copy
-const message = `Made with 🖤 in Salem, MA`;
+const message = `Made with 🤍 in Salem, MA`;
 const company = `Milbo LLC`;
 const crYear = `© ${new Date().getFullYear()}`;
 
