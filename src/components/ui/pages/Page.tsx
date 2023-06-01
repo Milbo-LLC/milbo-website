@@ -11,7 +11,7 @@ export default function Page({ children }: PageProps) {
       <div className="flex flex-col w-screen h-screen">
         <Topbar />
         <div className="flex flex-col h-full overflow-auto scrollbar-hide justify-between">
-          <div className="py-20">{children}</div>
+          <div className="py-8">{children}</div>
           <Footer />
         </div>
       </div>

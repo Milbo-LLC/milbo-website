@@ -73,10 +73,15 @@ const Copyright = () => {
 
 export default function Footer() {
   return (
-    <div className="flex w-full justify-between items-center text-xs sm:text-sm md:text-md font-bold px-6 pb-4">
+    <motion.div
+      className="flex w-full justify-between items-center text-xs sm:text-sm md:text-md font-bold px-6 pb-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0.5 }}
+    >
       <Logo />
       <Links />
       <Copyright />
-    </div>
+    </motion.div>
   );
 }

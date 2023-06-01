@@ -7,6 +7,7 @@ import TextField from "../form-fields/TextField";
 import { REGEX_EMAIL } from "@/components/utils/regex";
 import Button from "../buttons/Button";
 import emailjs from "@emailjs/browser";
+import { motion } from "framer-motion";
 
 // Credentials for EmailJS
 const emailJSAccessToken = process.env.NEXT_PUBLIC_EMAILJS_ACCESS_TOKEN;
@@ -45,51 +46,58 @@ export default function ContactForm({ loading }: FormProps) {
   } = useForm<FieldValues>();
 
   return (
-    <form onSubmit={handleSubmit((data) => onSubmit({ data, setValue }))}>
-      <Box sx={{ flexGrow: 1 }} className="w-full max-w-2xl">
-        <Grid container columnSpacing={3}>
-          <Grid item xs={12}>
-            <TextField
-              control={control}
-              name="name"
-              type="text"
-              placeholder="Full name"
-              required="Full name is required."
-              errors={errors}
-            />
+    <motion.div
+      className="flex flex-col items-center"
+      initial={{ opacity: 0, y: 150 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 100, damping: 30 }}
+    >
+      <form onSubmit={handleSubmit((data) => onSubmit({ data, setValue }))}>
+        <Box sx={{ flexGrow: 1 }} className="w-full max-w-2xl">
+          <Grid container columnSpacing={3}>
+            <Grid item xs={12}>
+              <TextField
+                control={control}
+                name="name"
+                type="text"
+                placeholder="Full name"
+                required="Full name is required."
+                errors={errors}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                control={control}
+                name="email"
+                type="text"
+                placeholder="Email address"
+                required="Email address is required."
+                pattern={{
+                  value: REGEX_EMAIL,
+                  message: "Please enter a valid email address",
+                }}
+                errors={errors}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                control={control}
+                name="message"
+                type="text"
+                placeholder="Message"
+                required="Message is required."
+                errors={errors}
+                multiline
+                minRows={4}
+                maxRows={4}
+              />
+            </Grid>
+            <Grid item xs={12} className="flex justify-center pt-8">
+              <Button label="Submit" loading={loading} />
+            </Grid>
           </Grid>
-          <Grid item xs={12}>
-            <TextField
-              control={control}
-              name="email"
-              type="text"
-              placeholder="Email address"
-              required="Email address is required."
-              pattern={{
-                value: REGEX_EMAIL,
-                message: "Please enter a valid email address",
-              }}
-              errors={errors}
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField
-              control={control}
-              name="message"
-              type="text"
-              placeholder="Message"
-              required="Message is required."
-              errors={errors}
-              multiline
-              minRows={4}
-              maxRows={4}
-            />
-          </Grid>
-          <Grid item xs={12} className="flex justify-center pt-8">
-            <Button label="Submit" loading={loading} />
-          </Grid>
-        </Grid>
-      </Box>
-    </form>
+        </Box>
+      </form>
+    </motion.div>
   );
 }

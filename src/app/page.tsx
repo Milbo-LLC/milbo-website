@@ -6,16 +6,22 @@ import { Grid } from "@mui/material";
 import { IconType } from "react-icons";
 import { MdLightbulb, MdPeople, MdShield, MdVpnKey } from "react-icons/md";
 import NewsLetterForm from "@/components/ui/forms/NewsLetterForm";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const title = `Building the future.`;
   const subtitle = `We're a cutting-edge tech company focused on creating extraordinary web and mobile applications powered by AI.`;
 
   return (
-    <div className="flex flex-col self-center justify-center text-center max-w-4xl">
+    <motion.div
+      className="flex flex-col self-center justify-center text-center max-w-4xl"
+      initial={{ opacity: 0, scale: 0.6 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0 }}
+    >
       <h1 className="text-[72px]">{title}</h1>
       <div className="text-[24px]">{subtitle}</div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -67,7 +73,12 @@ const CoreValue = ({
 const CoreValues = () => {
   const title = `Our Core Values`;
   return (
-    <div className="flex flex-col w-full bg-[#173F5F] p-8 rounded-lg gap-8">
+    <motion.div
+      className="flex flex-col w-full bg-[#173F5F] p-8 rounded-lg gap-8"
+      initial={{ opacity: 0, y: 150 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 100, damping: 30 }}
+    >
       <h1>{title}</h1>
       <Grid container spacing={3}>
         {values.map(({ value, description, Icon }) => (
@@ -79,7 +90,7 @@ const CoreValues = () => {
           />
         ))}
       </Grid>
-    </div>
+    </motion.div>
   );
 };
 

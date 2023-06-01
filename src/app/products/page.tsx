@@ -7,6 +7,7 @@ import frankenotesLogo from "@/assets/frankenotes-logo.svg";
 import { useState } from "react";
 import Page from "@/components/ui/pages/Page";
 import NewsLetterForm from "@/components/ui/forms/NewsLetterForm";
+import { motion } from "framer-motion";
 
 const NewsLetterFormTitle = `Sign up to stay up to date with our progress.`;
 
@@ -14,9 +15,14 @@ const Header = () => {
   const title = `Here's what we're building.`;
 
   return (
-    <div className="flex flex-col self-center justify-center text-center max-w-4xl">
+    <motion.div
+      className="flex flex-col self-center justify-center text-center max-w-4xl"
+      initial={{ opacity: 0, scale: 0.6 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0 }}
+    >
       <h1 className="text-[72px]">{title}</h1>
-    </div>
+    </motion.div>
   );
 };
 
@@ -40,7 +46,12 @@ const products = [
 
 const ProductsDisplay = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <motion.div
+      className="flex flex-col gap-4"
+      initial={{ opacity: 0, y: 150 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 100, damping: 30 }}
+    >
       {products.map(({ name, description, Icon }, index) => (
         <div
           key={name}
@@ -60,7 +71,7 @@ const ProductsDisplay = () => {
           <h1 className="flex flex-1 justify-center">COMING SOON!</h1>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,4 +1,7 @@
+"use client";
+
 import Page from "@/components/ui/pages/Page";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Header = () => {
@@ -6,10 +9,15 @@ const Header = () => {
   const subtitle = `We're on a mission to empower individuals through innovative solutions.`;
 
   return (
-    <div className="flex flex-col self-center justify-center text-center max-w-4xl">
+    <motion.div
+      className="flex flex-col self-center justify-center text-center max-w-4xl"
+      initial={{ opacity: 0, scale: 0.6 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0 }}
+    >
       <h1 className="text-[72px]">{title}</h1>
       <div className="text-[24px]">{subtitle}</div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -34,7 +42,12 @@ const members = [
 const Team = () => {
   const title = `Our Team`;
   return (
-    <div className="flex flex-col p-8 bg-[#173F5F] rounded-lg gap-8">
+    <motion.div
+      className="flex flex-col p-8 bg-[#173F5F] rounded-lg gap-8"
+      initial={{ opacity: 0, y: 150 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 100, damping: 30 }}
+    >
       <h1>{title}</h1>
       <div className="flex gap-4">
         {members.map(({ name, title, imgUrl }) => (
@@ -58,7 +71,7 @@ const Team = () => {
           </div>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
