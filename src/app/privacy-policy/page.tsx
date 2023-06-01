@@ -5,7 +5,7 @@ const Header = () => {
 
   return (
     <div className="flex flex-col self-center justify-center text-center max-w-4xl">
-      <h1 className="text-[72px]">{title}</h1>
+      <h1 className="text-[72px] leading-none sm:leading-4">{title}</h1>
     </div>
   );
 };

@@ -15,7 +15,7 @@ const Header = () => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0 }}
     >
-      <h1 className="text-[72px]">{title}</h1>
+      <h1 className="text-[72px] leading-none sm:leading-4">{title}</h1>
     </motion.div>
   );
 };
@@ -28,10 +28,12 @@ export default function Contact() {
   };
   return (
     <Page>
-      <div className="flex flex-col w-full items-center">
-        <div className="flex flex-col max-w-4xl gap-8">
+      <div className="flex flex-col w-full h-full items-center">
+        <div className="flex flex-col max-w-4xl h-full gap-16">
           <Header />
-          <ContactForm loading={loading} onSubmit={onSubmit} />
+          <div className="flex flex-1 h-full items-center">
+            <ContactForm loading={loading} onSubmit={onSubmit} />
+          </div>
         </div>
       </div>
     </Page>

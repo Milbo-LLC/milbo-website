@@ -21,7 +21,7 @@ const Header = () => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0 }}
     >
-      <h1 className="text-[72px]">{title}</h1>
+      <h1 className="text-[72px] leading-none">{title}</h1>
     </motion.div>
   );
 };
@@ -55,7 +55,7 @@ const ProductsDisplay = () => {
       {products.map(({ name, description, Icon }, index) => (
         <div
           key={name}
-          className={`flex p-4 gap-4 items-center rounded-lg ${
+          className={`flex flex-col sm:flex-row p-4 sm:gap-4 items-center rounded-lg ${
             index % 2 ? "bg-[#64B6AC] text-black" : "bg-[#173F5F]"
           } border-4 border-transparent hover:border-white`}
         >
@@ -84,7 +84,7 @@ export default function Products() {
 
   return (
     <Page>
-      <div className="flex flex-col w-full items-center">
+      <div className="flex flex-col w-full h-fit items-center">
         <div className="flex flex-col max-w-4xl gap-8">
           <Header />
           <NewsLetterForm

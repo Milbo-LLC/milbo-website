@@ -14,12 +14,12 @@ const Header = () => {
 
   return (
     <motion.div
-      className="flex flex-col self-center justify-center text-center max-w-4xl"
+      className="flex flex-col self-center justify-center text-center max-w-4xl gap-4 sm:gap-16"
       initial={{ opacity: 0, scale: 0.6 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ type: "spring", stiffness: 100, damping: 30, delay: 0 }}
     >
-      <h1 className="text-[72px]">{title}</h1>
+      <h1 className="text-[72px] leading-none sm:leading-4">{title}</h1>
       <div className="text-[24px]">{subtitle}</div>
     </motion.div>
   );
