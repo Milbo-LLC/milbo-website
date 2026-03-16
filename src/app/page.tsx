@@ -4,48 +4,48 @@ import { notoSansDisplay } from "./layout";
 
 const capabilities = [
   {
-    title: "Launch-ready in days",
+    title: "Portfolio mindset",
     description:
-      "Skip months of infra work—spin up agent teams with built-in tooling and guardrails.",
+      "We build multiple SaaS products in parallel, sharing learnings across the stack.",
   },
   {
-    title: "Reliability by default",
+    title: "Agent-powered execution",
     description:
-      "Automated QA, monitoring, and instant issue routing keep workflows stable.",
+      "Teams of agents handle research, product, engineering, QA, and ops with human oversight.",
   },
   {
-    title: "Scale without rewrites",
+    title: "Always shipping",
     description:
-      "Compute and orchestration scale as teams grow, without rebuilding pipelines.",
+      "Fast release cycles, continuous QA, and tight feedback loops keep momentum high.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Design the team",
+    title: "Find the wedge",
     description:
-      "Describe the outcome, define roles, and spin up the right mix of agents in minutes.",
+      "Identify a clear pain point, validate demand, and define the MVP scope.",
   },
   {
     step: "02",
-    title: "Run the workflow",
+    title: "Build with agents",
     description:
-      "Agents coordinate across research, product, engineering, QA, and ops with built-in guardrails.",
+      "Agent pods execute design, engineering, and QA while we oversee the strategy.",
   },
   {
     step: "03",
-    title: "Ship continuously",
+    title: "Launch + iterate",
     description:
-      "Push features, catch regressions, and keep improving with real-time feedback loops.",
+      "Ship fast, learn from users, and compound improvements across the portfolio.",
   },
 ];
 
 const useCases = [
-  "SaaS product teams",
-  "AI-native workflows",
-  "Internal tooling",
-  "Growth experiments",
+  "SendTask (agent teams platform)",
+  "Workflow automation",
+  "Team productivity",
+  "AI-native SaaS",
 ];
 
 export default function Home() {
@@ -78,15 +78,16 @@ export default function Home() {
         <section className="grid gap-12 pb-20 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/60">
-              Agent team infrastructure
+              Multi-product SaaS studio
             </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Launch agent teams in days, not months.
+              We build SaaS products powered by agent teams.
             </h1>
             <p className="max-w-xl text-lg text-white/70">
-              Milbo is the infrastructure layer that turns a workflow idea into
-              a running agent team—complete with compute, orchestration, QA, and
-              monitoring. You design the team. We make it reliable and scalable.
+              Milbo is a product company building a portfolio of SaaS tools. Our
+              flagship product, <strong>SendTask</strong>, gives customers the
+              compute, infrastructure, and tools to create their own agent teams
+              through intuitive conversations.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
@@ -119,28 +120,28 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8">
               <div className="space-y-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-white/50">
-                  Agent teams, not managed services
+                  Flagship product: SendTask
                 </p>
                 <h2 className="text-2xl font-semibold">
-                  Turn workflows into production-grade agent teams.
+                  Build agent teams without managing infra.
                 </h2>
                 <p className="text-sm text-white/70">
-                  Milbo handles the hard parts—compute, orchestration, QA, and
-                  monitoring—so your teams launch faster and stay reliable as
-                  they scale.
+                  SendTask lets customers design their own agent teams while we
+                  provide the runtime, compute, orchestration, and QA that keep
+                  everything reliable.
                 </p>
                 <div className="grid gap-3 text-xs text-white/60">
                   <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
                     <span>Team builder</span>
-                    <span className="text-white/70">Prompt-based setup</span>
+                    <span className="text-white/70">Conversation-first</span>
                   </div>
                   <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
                     <span>Compute + orchestration</span>
-                    <span className="text-white/70">Always-on runtime</span>
+                    <span className="text-white/70">Managed runtime</span>
                   </div>
                   <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
-                    <span>Quality signals</span>
-                    <span className="text-white/70">QA + monitoring</span>
+                    <span>QA + monitoring</span>
+                    <span className="text-white/70">Always-on quality</span>
                   </div>
                 </div>
               </div>
@@ -166,12 +167,11 @@ export default function Home() {
               How it works
             </p>
             <h2 className="text-3xl font-semibold">
-              The fastest path to reliable agent operations.
+              How we build the portfolio.
             </h2>
             <p className="text-sm text-white/70">
-              You own the workflow and team design. Milbo delivers the runtime,
-              testing, and monitoring that make agent teams dependable in
-              production.
+              Each SaaS product is backed by agent pods that help us move faster
+              while maintaining quality. SendTask is the first of many.
             </p>
           </div>
           <div className="grid gap-4">
@@ -192,24 +192,24 @@ export default function Home() {
 
         <section className="mt-16 grid gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-10 text-center">
           <h2 className="text-3xl font-semibold">
-            Ready to build your first agent team?
+            Want early access to SendTask?
           </h2>
           <p className="mx-auto max-w-2xl text-sm text-white/70">
-            We’ll show you how to design the right team, set up workflows, and
-            keep shipping reliably.
+            Join the waitlist to help shape the first product in the Milbo
+            portfolio.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
             >
-              Talk to Milbo
+              Join the waitlist
             </Link>
             <Link
-              href="/platform"
+              href="/contact"
               className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60"
             >
-              Explore platform
+              Talk to Milbo
             </Link>
           </div>
         </section>
