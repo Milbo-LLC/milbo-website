@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { notoSansDisplay } from "./layout";
 
 const features = [
   {
@@ -34,7 +35,11 @@ export default function Home() {
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-8">
         <div className="flex items-center gap-3">
           <Image src="/logo.svg" alt="Milbo logo" width={40} height={40} />
-          <span className="text-lg font-semibold tracking-tight">Milbo</span>
+          <span
+            className={`text-lg font-semibold tracking-tight ${notoSansDisplay.className}`}
+          >
+            milbo
+          </span>
         </div>
         <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
           <span>Work</span>
