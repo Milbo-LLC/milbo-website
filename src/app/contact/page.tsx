@@ -38,7 +38,9 @@ export default function ContactPage() {
           </h1>
           <p className="max-w-2xl text-sm text-white/70">
             Tell us about the teams you want to build and we’ll walk you through
-            the tooling, infrastructure, and compute options.
+            the tooling, infrastructure, and compute options behind products like{" "}
+            <Link href="https://sendtask.ai" className="underline">SendTask</Link>,
+            Polygon (AI-powered CAD), and Memoir (memory-first journaling).
           </p>
         </section>
 
