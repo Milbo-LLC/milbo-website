@@ -4,19 +4,19 @@ import { notoSansDisplay } from "../layout";
 
 const principles = [
   {
-    title: "Agent-first",
+    title: "Customer-owned teams",
     description:
-      "We design workflows around agent capabilities, then layer in expert oversight.",
+      "We give customers the power to design and run their own agent teams.",
   },
   {
-    title: "Speed with taste",
+    title: "Infrastructure first",
     description:
-      "Fast delivery that still feels premium—craft matters.",
+      "Milbo provides compute, orchestration, and tooling—not managed services.",
   },
   {
-    title: "Transparent execution",
+    title: "Fast feedback loops",
     description:
-      "Daily progress updates, shared dashboards, and clear ownership.",
+      "Built-in monitoring and QA keep workflows reliable as they scale.",
   },
 ];
 
@@ -33,7 +33,7 @@ export default function AboutPage() {
           </span>
         </div>
         <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-          <Link href="/services">Services</Link>
+          <Link href="/platform">Platform</Link>
           <Link href="/process">Process</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
@@ -50,12 +50,12 @@ export default function AboutPage() {
         <section className="space-y-6 pb-16 pt-12">
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">About</p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            A modern product studio built on agent teams.
+            An infrastructure platform for agent teams.
           </h1>
           <p className="max-w-2xl text-sm text-white/70">
-            Milbo blends AI agent execution with senior product leadership to
-            help founders and teams ship faster, more reliably, and with less
-            operational drag.
+            Milbo is not a managed services firm. We build the compute,
+            orchestration, and tools that let customers build their own agent
+            teams through intuitive conversations.
           </p>
         </section>
 
@@ -74,8 +74,8 @@ export default function AboutPage() {
         <section className="mt-16 rounded-3xl border border-white/10 bg-black/40 p-10">
           <h2 className="text-2xl font-semibold">Based in Salem, MA</h2>
           <p className="mt-2 text-sm text-white/70">
-            Working with partners across the US and Europe. We favor tight
-            communication, rapid iteration, and a crisp delivery cadence.
+            Working with teams globally to help them build agent-powered products
+            faster.
           </p>
         </section>
       </main>
