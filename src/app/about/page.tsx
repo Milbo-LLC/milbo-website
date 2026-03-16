@@ -55,7 +55,9 @@ export default function AboutPage() {
           <p className="max-w-2xl text-sm text-white/70">
             Milbo is not a managed services firm. We build the compute,
             orchestration, and tools that let customers build their own agent
-            teams through intuitive conversations.
+            teams through intuitive conversations. Our portfolio includes{" "}
+            <Link href="https://sendtask.ai" className="underline">SendTask</Link>,
+            Polygon (AI-powered CAD), and Memoir (memory-first journaling).
           </p>
         </section>
 

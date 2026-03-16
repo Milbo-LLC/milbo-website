@@ -42,10 +42,19 @@ const workflow = [
 ];
 
 const useCases = [
-  "SendTask (agent teams platform)",
-  "Workflow automation",
-  "Team productivity",
-  "AI-native SaaS",
+  {
+    label: "SendTask",
+    href: "https://sendtask.ai",
+    detail: "Agent teams platform",
+  },
+  {
+    label: "Polygon",
+    detail: "AI-powered CAD platform",
+  },
+  {
+    label: "Memoir",
+    detail: "Journaling app for better memory",
+  },
 ];
 
 export default function Home() {
@@ -85,9 +94,13 @@ export default function Home() {
             </h1>
             <p className="max-w-xl text-lg text-white/70">
               Milbo is a product company building a portfolio of SaaS tools. Our
-              flagship product, <strong>SendTask</strong>, gives customers the
-              compute, infrastructure, and tools to create their own agent teams
-              through intuitive conversations.
+              flagship product,{
+              " "}
+              <Link href="https://sendtask.ai" className="underline">
+                SendTask
+              </Link>
+              , gives customers the compute, infrastructure, and tools to create
+              their own agent teams through intuitive conversations.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
@@ -106,10 +119,17 @@ export default function Home() {
             <div className="flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em] text-white/50">
               {useCases.map((item) => (
                 <span
-                  key={item}
+                  key={item.label}
                   className="rounded-full border border-white/10 px-3 py-1"
                 >
-                  {item}
+                  {item.href ? (
+                    <Link href={item.href} className="underline">
+                      {item.label}
+                    </Link>
+                  ) : (
+                    item.label
+                  )}
+                  {item.detail ? ` · ${item.detail}` : ""}
                 </span>
               ))}
             </div>
@@ -128,7 +148,11 @@ export default function Home() {
                 <p className="text-sm text-white/70">
                   SendTask lets customers design their own agent teams while we
                   provide the runtime, compute, orchestration, and QA that keep
-                  everything reliable.
+                  everything reliable. Learn more at{" "}
+                  <Link href="https://sendtask.ai" className="underline">
+                    SendTask.ai
+                  </Link>
+                  .
                 </p>
                 <div className="grid gap-3 text-xs text-white/60">
                   <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
@@ -200,10 +224,10 @@ export default function Home() {
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact"
+              href="https://sendtask.ai"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
             >
-              Join the waitlist
+              Join the SendTask waitlist
             </Link>
             <Link
               href="/contact"

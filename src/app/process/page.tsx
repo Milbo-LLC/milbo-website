@@ -62,6 +62,8 @@ export default function ProcessPage() {
           <p className="max-w-2xl text-sm text-white/70">
             Milbo gives your customers the platform to build their own teams. We
             provide the infrastructure and compute so workflows stay reliable.
+            The same system powers <Link href="https://sendtask.ai" className="underline">SendTask</Link>,
+            Polygon (AI-powered CAD), and Memoir (memory-first journaling).
           </p>
         </section>
 

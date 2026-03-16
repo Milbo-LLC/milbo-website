@@ -62,7 +62,12 @@ export default function PlatformPage() {
           <p className="max-w-2xl text-sm text-white/70">
             Milbo replaces months of infra work with a ready-to-run platform for
             agent teams—compute, orchestration, QA, and monitoring included. You
-            stay in control of the team design and workflows.
+            stay in control of the team design and workflows. The platform
+            powers products like{" "}
+            <Link href="https://sendtask.ai" className="underline">
+              SendTask
+            </Link>
+            , plus Polygon (AI-powered CAD) and Memoir (memory-first journaling).
           </p>
         </section>
 
