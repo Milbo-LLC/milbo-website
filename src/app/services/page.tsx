@@ -2,6 +2,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { notoSansDisplay } from "../layout";
 
+const products = [
+  {
+    name: "SendTask",
+    href: "https://sendtask.ai",
+    description: "Agent teams platform powered by Milbo infrastructure.",
+  },
+  {
+    name: "Polygon",
+    description: "AI-powered CAD platform for faster iteration.",
+  },
+  {
+    name: "Memoir",
+    description: "Journaling app that improves your memory.",
+  },
+];
+
 const services = [
   {
     title: "Agent-led product strategy",
@@ -54,7 +70,7 @@ export default function ServicesPage() {
       <main className="mx-auto w-full max-w-6xl px-6 pb-24">
         <section className="space-y-6 pb-16 pt-12">
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-            Services
+            We build SaaS products using agents. So can you.
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
             End-to-end delivery with agent teams.
@@ -77,6 +93,33 @@ export default function ServicesPage() {
               </p>
             </div>
           ))}
+        </section>
+
+        <section className="mt-16">
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+            Products in progress
+          </p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {products.map((product) => (
+              <div
+                key={product.name}
+                className="rounded-2xl border border-white/10 bg-white/5 p-5"
+              >
+                <h3 className="text-lg font-semibold">
+                  {product.href ? (
+                    <Link href={product.href} className="underline">
+                      {product.name}
+                    </Link>
+                  ) : (
+                    product.name
+                  )}
+                </h3>
+                <p className="mt-2 text-sm text-white/70">
+                  {product.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
 
         <section className="mt-16 rounded-3xl border border-white/10 bg-black/40 p-10">
