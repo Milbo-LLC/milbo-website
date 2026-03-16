@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${firaSans.variable} ${mono.variable} ${notoSansDisplay.variable} antialiased`}
+        className={`${firaSans.className} ${firaSans.variable} ${mono.variable} ${notoSansDisplay.variable} antialiased`}
       >
         {children}
       </body>
