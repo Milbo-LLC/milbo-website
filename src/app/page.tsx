@@ -1,31 +1,61 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { notoSansDisplay } from "./layout";
 
-const features = [
+const capabilities = [
   {
-    title: "Strategy + product",
+    title: "Portfolio mindset",
     description:
-      "We clarify the roadmap, scope, and story so every sprint moves the needle.",
+      "We build multiple SaaS products in parallel, sharing learnings across the stack.",
   },
   {
-    title: "Design with taste",
+    title: "Agent-powered execution",
     description:
-      "Clean, modern UI systems built for speed, clarity, and conversion.",
+      "Teams of agents handle research, product, engineering, QA, and ops with human oversight.",
   },
   {
-    title: "Ship-ready engineering",
+    title: "Always shipping",
     description:
-      "Next.js, Tailwind, and TypeScript with strong DX and scalable patterns.",
+      "Fast release cycles, continuous QA, and tight feedback loops keep momentum high.",
   },
 ];
 
-const highlights = [
-  "Web apps",
-  "Landing pages",
-  "Design systems",
-  "AI workflows",
-  "Growth experiments",
-  "Product MVPs",
+const workflow = [
+  {
+    step: "01",
+    title: "Find the wedge",
+    description:
+      "Identify a clear pain point, validate demand, and define the MVP scope.",
+  },
+  {
+    step: "02",
+    title: "Build with agents",
+    description:
+      "Agent pods execute design, engineering, and QA while we oversee the strategy.",
+  },
+  {
+    step: "03",
+    title: "Launch + iterate",
+    description:
+      "Ship fast, learn from users, and compound improvements across the portfolio.",
+  },
+];
+
+const products = [
+  {
+    name: "SendTask",
+    href: "https://sendtask.ai",
+    description:
+      "Build and run agent teams with the compute, orchestration, and QA they need.",
+  },
+  {
+    name: "Polygon",
+    description: "AI-powered CAD platform for faster iteration.",
+  },
+  {
+    name: "Memoir",
+    description: "Journaling app that improves your memory.",
+  },
 ];
 
 export default function Home() {
@@ -34,58 +64,71 @@ export default function Home() {
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-8">
         <div className="flex items-center gap-3">
           <Image src="/logo.svg" alt="Milbo logo" width={40} height={40} />
-          <span className="text-lg font-semibold tracking-tight">Milbo</span>
+          <span
+            className={`text-lg font-semibold tracking-tight ${notoSansDisplay.className}`}
+          >
+            milbo
+          </span>
         </div>
-        <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-          <span>Work</span>
-          <span>Services</span>
-          <span>Process</span>
-          <span>Contact</span>
-        </nav>
+        <div className="text-xs uppercase tracking-[0.3em] text-white/50">
+          We build SaaS products using agents. So can you.
+        </div>
         <Link
-          href="#contact"
+          href="https://sendtask.ai"
           className="rounded-full border border-white/20 px-5 py-2 text-sm font-medium transition hover:border-white/60"
         >
-          Book a call
+          SendTask.ai
         </Link>
       </header>
 
       <main className="mx-auto w-full max-w-6xl px-6 pb-24">
-        <section className="grid gap-12 pb-20 pt-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <section className="grid gap-12 pb-20 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/60">
-              Software studio · Salem, MA
+              We build SaaS products using agents. So can you.
             </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Design-forward software that feels effortless to use.
+              We build SaaS products using agents. So can you.
             </h1>
             <p className="max-w-xl text-lg text-white/70">
-              Milbo helps teams move from concept to launch with crisp design,
-              fast engineering, and a product mindset. We build experiences that
-              look premium and ship quickly.
+              Milbo is a product company building a portfolio of SaaS tools. Our
+              flagship product, <Link href="https://sendtask.ai" className="underline">SendTask</Link>,
+              gives customers the compute, infrastructure, and tools to create
+              their own agent teams through intuitive conversations.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
-                href="#contact"
+                href="/contact"
                 className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
               >
                 Start a project
               </Link>
               <Link
-                href="#work"
+                href="/process"
                 className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60"
               >
-                View recent work
+                See the workflow
               </Link>
             </div>
-            <div className="flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em] text-white/50">
-              {highlights.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full border border-white/10 px-3 py-1"
+            <div className="grid gap-4 sm:grid-cols-3">
+              {products.map((product) => (
+                <div
+                  key={product.name}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-4"
                 >
-                  {item}
-                </span>
+                  <h3 className="text-base font-semibold">
+                    {product.href ? (
+                      <Link href={product.href} className="underline">
+                        {product.name}
+                      </Link>
+                    ) : (
+                      product.name
+                    )}
+                  </h3>
+                  <p className="mt-2 text-sm text-white/70">
+                    {product.description}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
@@ -95,25 +138,33 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8">
               <div className="space-y-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-white/50">
-                  Featured
+                  Flagship product: SendTask
                 </p>
                 <h2 className="text-2xl font-semibold">
-                  Launch-ready experiences in weeks, not quarters.
+                  Build agent teams without managing infra.
                 </h2>
                 <p className="text-sm text-white/70">
-                  We work in tight, transparent sprints and share progress daily.
-                  You get a high-polish product and a team that feels in-house.
+                  SendTask lets customers design their own agent teams while we
+                  provide the runtime, compute, orchestration, and QA that keep
+                  everything reliable. Learn more at{" "}
+                  <Link href="https://sendtask.ai" className="underline">
+                    SendTask.ai
+                  </Link>
+                  .
                 </p>
-                <div className="flex items-center gap-4 text-xs text-white/60">
-                  <span className="rounded-full bg-white/10 px-3 py-1">
-                    Design
-                  </span>
-                  <span className="rounded-full bg-white/10 px-3 py-1">
-                    Build
-                  </span>
-                  <span className="rounded-full bg-white/10 px-3 py-1">
-                    Launch
-                  </span>
+                <div className="grid gap-3 text-xs text-white/60">
+                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
+                    <span>Team builder</span>
+                    <span className="text-white/70">Conversation-first</span>
+                  </div>
+                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
+                    <span>Compute + orchestration</span>
+                    <span className="text-white/70">Managed runtime</span>
+                  </div>
+                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
+                    <span>QA + monitoring</span>
+                    <span className="text-white/70">Always-on quality</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -121,69 +172,66 @@ export default function Home() {
         </section>
 
         <section className="grid gap-6 border-t border-white/10 py-16 md:grid-cols-3">
-          {features.map((feature) => (
-            <div key={feature.title} className="space-y-3">
-              <h3 className="text-lg font-semibold">{feature.title}</h3>
-              <p className="text-sm text-white/70">{feature.description}</p>
+          {capabilities.map((item) => (
+            <div key={item.title} className="space-y-3">
+              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <p className="text-sm text-white/70">{item.description}</p>
             </div>
           ))}
         </section>
 
         <section
-          id="work"
-          className="grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-10 lg:grid-cols-[1.2fr_0.8fr]"
+          id="process"
+          className="grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-10 lg:grid-cols-[1.1fr_0.9fr]"
         >
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-              Recent collaborations
+              How it works
             </p>
             <h2 className="text-3xl font-semibold">
-              Premium brands trust Milbo to deliver with speed and taste.
+              How we build the portfolio.
             </h2>
             <p className="text-sm text-white/70">
-              From founder-led startups to growth teams, we bring high-end visual
-              polish and a pragmatic shipping cadence.
+              Each SaaS product is backed by agent pods that help us move faster
+              while maintaining quality. SendTask is the first of many.
             </p>
           </div>
-          <div className="grid gap-4 text-sm text-white/60">
-            <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-              <p className="font-semibold text-white">Product MVP</p>
-              <p>Idea to launch in 5 weeks.</p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-              <p className="font-semibold text-white">Design system</p>
-              <p>Reusable components and storybook.</p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-              <p className="font-semibold text-white">Growth site</p>
-              <p>New landing page and conversion lift.</p>
-            </div>
+          <div className="grid gap-4">
+            {workflow.map((item) => (
+              <div
+                key={item.step}
+                className="rounded-2xl border border-white/10 bg-black/40 p-4"
+              >
+                <div className="flex items-center justify-between text-xs uppercase text-white/50">
+                  <span>{item.step}</span>
+                  <span>{item.title}</span>
+                </div>
+                <p className="mt-3 text-sm text-white/70">{item.description}</p>
+              </div>
+            ))}
           </div>
         </section>
 
-        <section
-          id="contact"
-          className="mt-16 grid gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-10 text-center"
-        >
+        <section className="mt-16 grid gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-10 text-center">
           <h2 className="text-3xl font-semibold">
-            Ready to build something beautiful?
+            Want early access to SendTask?
           </h2>
           <p className="mx-auto max-w-2xl text-sm text-white/70">
-            Tell us about your product and timeline. We’ll reply with a clear
-            plan, estimated scope, and next steps within 48 hours.
+            Join the waitlist to help shape the first product in the Milbo
+            portfolio.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="mailto:hello@milbo.co"
+              href="https://sendtask.ai"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
             >
-              Email hello@milbo.co
+              Join the SendTask waitlist
             </Link>
             <Link
-              href="#"
+              href="/contact"
               className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60"
             >
-              Download capabilities deck
+              Talk to Milbo
             </Link>
           </div>
         </section>

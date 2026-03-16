@@ -1,14 +1,24 @@
 import type { Metadata } from "next";
-import { Sora, JetBrains_Mono } from "next/font/google";
+import {
+  Fira_Sans,
+  JetBrains_Mono,
+  Noto_Sans_Display,
+} from "next/font/google";
 import "./globals.css";
 
-const sora = Sora({
-  variable: "--font-sora",
+const firaSans = Fira_Sans({
+  variable: "--font-fira-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const mono = JetBrains_Mono({
   variable: "--font-mono",
+  subsets: ["latin"],
+});
+
+export const notoSansDisplay = Noto_Sans_Display({
+  variable: "--font-noto-sans-display",
   subsets: ["latin"],
 });
 
@@ -24,7 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sora.variable} ${mono.variable} antialiased`}>
+      <body
+        className={`${firaSans.className} ${firaSans.variable} ${mono.variable} ${notoSansDisplay.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
