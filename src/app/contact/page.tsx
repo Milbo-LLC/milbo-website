@@ -15,7 +15,7 @@ export default function ContactPage() {
           </span>
         </div>
         <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-          <Link href="/services">Services</Link>
+          <Link href="/platform">Platform</Link>
           <Link href="/process">Process</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
@@ -34,11 +34,11 @@ export default function ContactPage() {
             Contact
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Let’s build your next release.
+            Let’s set up your agent teams.
           </h1>
           <p className="max-w-2xl text-sm text-white/70">
-            Tell us what you’re shipping and we’ll reply with a clear plan,
-            timeline, and the agent pod we’d assemble.
+            Tell us about the teams you want to build and we’ll walk you through
+            the tooling, infrastructure, and compute options.
           </p>
         </section>
 
@@ -46,7 +46,8 @@ export default function ContactPage() {
           <div className="space-y-4">
             <h2 className="text-2xl font-semibold">Start the conversation</h2>
             <p className="text-sm text-white/70">
-              Send a quick note about your product, scope, and timeline.
+              Share your workflow goals and we’ll outline how to configure your
+              teams.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
@@ -59,7 +60,7 @@ export default function ContactPage() {
                 href="#"
                 className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60"
               >
-                Download capabilities deck
+                Download platform deck
               </Link>
             </div>
           </div>
@@ -69,8 +70,8 @@ export default function ContactPage() {
             </p>
             <h3 className="mt-4 text-lg font-semibold">Within 48 hours</h3>
             <p className="mt-3 text-sm text-white/70">
-              We’ll outline a scope, delivery cadence, and the agent pod
-              composition that best fits your roadmap.
+              We’ll send recommended team structures, setup steps, and compute
+              options.
             </p>
           </div>
         </section>

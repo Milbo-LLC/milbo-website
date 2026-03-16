@@ -2,30 +2,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { notoSansDisplay } from "../layout";
 
-const steps = [
+const platformFeatures = [
   {
-    title: "Define the mission",
+    title: "Team builder",
     description:
-      "Outline the outcome and constraints so the right agents can be composed.",
+      "Assemble agent teams in minutes using natural language and reusable templates.",
   },
   {
-    title: "Compose the team",
+    title: "Compute + orchestration",
     description:
-      "Use Milbo tools to assign roles, workflows, and tool access in minutes.",
+      "We handle scheduling, runtime, and secure execution so teams can scale safely.",
   },
   {
-    title: "Run + monitor",
+    title: "Quality + monitoring",
     description:
-      "Agents execute with continuous QA, logging, and performance checks.",
+      "Automated tests, performance checks, and alerting keep every workflow healthy.",
   },
   {
-    title: "Ship + refine",
+    title: "Tooling layer",
     description:
-      "Deliver features continuously while refining the workflows with real feedback.",
+      "Connect internal systems, docs, and APIs so agents have the context they need.",
   },
 ];
 
-export default function ProcessPage() {
+export default function PlatformPage() {
   return (
     <div className="min-h-screen bg-[#0B0B0F] text-white">
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-8">
@@ -54,38 +54,46 @@ export default function ProcessPage() {
       <main className="mx-auto w-full max-w-6xl px-6 pb-24">
         <section className="space-y-6 pb-16 pt-12">
           <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-            Process
+            Platform
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            Build agent teams with intuitive tools.
+            The infrastructure layer for agent teams.
           </h1>
           <p className="max-w-2xl text-sm text-white/70">
-            Milbo gives your customers the platform to build their own teams. We
-            provide the infrastructure and compute so workflows stay reliable.
+            Milbo gives your customers the tools to build and run their own agent
+            teams. We provide the compute, orchestration, and guardrails—not a
+            managed services layer.
           </p>
         </section>
 
         <section className="grid gap-6 md:grid-cols-2">
-          {steps.map((step, index) => (
+          {platformFeatures.map((feature) => (
             <div
-              key={step.title}
+              key={feature.title}
               className="rounded-3xl border border-white/10 bg-white/5 p-6"
             >
-              <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-                Step 0{index + 1}
-              </p>
-              <h3 className="mt-3 text-lg font-semibold">{step.title}</h3>
-              <p className="mt-3 text-sm text-white/70">{step.description}</p>
+              <h3 className="text-lg font-semibold">{feature.title}</h3>
+              <p className="mt-3 text-sm text-white/70">{feature.description}</p>
             </div>
           ))}
         </section>
 
         <section className="mt-16 rounded-3xl border border-white/10 bg-black/40 p-10">
-          <h2 className="text-2xl font-semibold">Always-on infrastructure</h2>
-          <p className="mt-2 text-sm text-white/70">
-            We focus on runtime, orchestration, and monitoring so your teams can
-            focus on outcomes.
-          </p>
+          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <div>
+              <h2 className="text-2xl font-semibold">Build the team your way</h2>
+              <p className="mt-2 text-sm text-white/70">
+                Configure roles, rules, and tooling in conversations. We power
+                the infrastructure that keeps it reliable.
+              </p>
+            </div>
+            <Link
+              href="/contact"
+              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
+            >
+              Talk to us
+            </Link>
+          </div>
         </section>
       </main>
     </div>
