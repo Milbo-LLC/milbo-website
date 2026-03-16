@@ -1,33 +1,47 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { notoSansDisplay } from "./layout";
 
-const features = [
+const capabilities = [
   {
-    title: "Strategy + product",
+    title: "Agent pods",
     description:
-      "We clarify the roadmap, scope, and story so every sprint moves the needle.",
+      "Specialized AI agents for strategy, design, engineering, QA, and ops working in parallel.",
   },
   {
-    title: "Design with taste",
+    title: "Always shipping",
     description:
-      "Clean, modern UI systems built for speed, clarity, and conversion.",
+      "Daily progress, fast iteration cycles, and continuous delivery built into every project.",
   },
   {
-    title: "Ship-ready engineering",
+    title: "Reliability baked in",
     description:
-      "Next.js, Tailwind, and TypeScript with strong DX and scalable patterns.",
+      "Automated checks, instant bug triage, and human oversight to keep quality high.",
   },
 ];
 
-const highlights = [
-  "Web apps",
-  "Landing pages",
-  "Design systems",
-  "AI workflows",
-  "Growth experiments",
-  "Product MVPs",
+const workflow = [
+  {
+    step: "01",
+    title: "Align",
+    description:
+      "Define the product narrative, scope, and success metrics with a rapid discovery sprint.",
+  },
+  {
+    step: "02",
+    title: "Build",
+    description:
+      "Agent teams execute design, engineering, and QA in parallel with daily milestones.",
+  },
+  {
+    step: "03",
+    title: "Launch + iterate",
+    description:
+      "Ship fast, monitor closely, and keep the roadmap moving with always-on enhancements.",
+  },
 ];
+
+const useCases = ["B2B SaaS", "AI-native apps", "Internal tools", "Growth experiments"];
 
 export default function Home() {
   return (
@@ -42,13 +56,13 @@ export default function Home() {
           </span>
         </div>
         <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-          <span>Work</span>
-          <span>Services</span>
-          <span>Process</span>
-          <span>Contact</span>
+          <Link href="/services">Services</Link>
+          <Link href="/process">Process</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
         <Link
-          href="#contact"
+          href="/contact"
           className="rounded-full border border-white/20 px-5 py-2 text-sm font-medium transition hover:border-white/60"
         >
           Book a call
@@ -56,35 +70,34 @@ export default function Home() {
       </header>
 
       <main className="mx-auto w-full max-w-6xl px-6 pb-24">
-        <section className="grid gap-12 pb-20 pt-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <section className="grid gap-12 pb-20 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/60">
-              Software studio · Salem, MA
+              Agent-powered product studio
             </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Design-forward software that feels effortless to use.
+              Ship faster with teams of AI agents.
             </h1>
             <p className="max-w-xl text-lg text-white/70">
-              Milbo helps teams move from concept to launch with crisp design,
-              fast engineering, and a product mindset. We build experiences that
-              look premium and ship quickly.
+              We orchestrate agent teams across strategy, design, engineering, QA,
+              and ops—so your roadmap keeps moving and releases happen every week.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
-                href="#contact"
+                href="/contact"
                 className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
               >
                 Start a project
               </Link>
               <Link
-                href="#work"
+                href="/process"
                 className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60"
               >
-                View recent work
+                See the process
               </Link>
             </div>
             <div className="flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em] text-white/50">
-              {highlights.map((item) => (
+              {useCases.map((item) => (
                 <span
                   key={item}
                   className="rounded-full border border-white/10 px-3 py-1"
@@ -100,25 +113,29 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8">
               <div className="space-y-6">
                 <p className="text-sm uppercase tracking-[0.3em] text-white/50">
-                  Featured
+                  Built to scale output
                 </p>
                 <h2 className="text-2xl font-semibold">
-                  Launch-ready experiences in weeks, not quarters.
+                  Always shipping, always improving.
                 </h2>
                 <p className="text-sm text-white/70">
-                  We work in tight, transparent sprints and share progress daily.
-                  You get a high-polish product and a team that feels in-house.
+                  Agent pods handle the busywork so your team stays focused on the
+                  decisions that matter. We ship in tight cycles and keep quality
+                  high with automated checks and human oversight.
                 </p>
-                <div className="flex items-center gap-4 text-xs text-white/60">
-                  <span className="rounded-full bg-white/10 px-3 py-1">
-                    Design
-                  </span>
-                  <span className="rounded-full bg-white/10 px-3 py-1">
-                    Build
-                  </span>
-                  <span className="rounded-full bg-white/10 px-3 py-1">
-                    Launch
-                  </span>
+                <div className="grid gap-3 text-xs text-white/60">
+                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
+                    <span>Weekly releases</span>
+                    <span className="text-white/70">4–7 day cadence</span>
+                  </div>
+                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
+                    <span>Active agents</span>
+                    <span className="text-white/70">6–10 per pod</span>
+                  </div>
+                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
+                    <span>Signal checks</span>
+                    <span className="text-white/70">QA + monitoring</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -126,69 +143,66 @@ export default function Home() {
         </section>
 
         <section className="grid gap-6 border-t border-white/10 py-16 md:grid-cols-3">
-          {features.map((feature) => (
-            <div key={feature.title} className="space-y-3">
-              <h3 className="text-lg font-semibold">{feature.title}</h3>
-              <p className="text-sm text-white/70">{feature.description}</p>
+          {capabilities.map((item) => (
+            <div key={item.title} className="space-y-3">
+              <h3 className="text-lg font-semibold">{item.title}</h3>
+              <p className="text-sm text-white/70">{item.description}</p>
             </div>
           ))}
         </section>
 
         <section
-          id="work"
-          className="grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-10 lg:grid-cols-[1.2fr_0.8fr]"
+          id="process"
+          className="grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-10 lg:grid-cols-[1.1fr_0.9fr]"
         >
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-              Recent collaborations
+              Our process
             </p>
             <h2 className="text-3xl font-semibold">
-              Premium brands trust Milbo to deliver with speed and taste.
+              A modern product team, coordinated by agents.
             </h2>
             <p className="text-sm text-white/70">
-              From founder-led startups to growth teams, we bring high-end visual
-              polish and a pragmatic shipping cadence.
+              We pair AI agent speed with senior operators to keep every decision
+              sharp and every release reliable.
             </p>
           </div>
-          <div className="grid gap-4 text-sm text-white/60">
-            <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-              <p className="font-semibold text-white">Product MVP</p>
-              <p>Idea to launch in 5 weeks.</p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-              <p className="font-semibold text-white">Design system</p>
-              <p>Reusable components and storybook.</p>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-black/40 p-4">
-              <p className="font-semibold text-white">Growth site</p>
-              <p>New landing page and conversion lift.</p>
-            </div>
+          <div className="grid gap-4">
+            {workflow.map((item) => (
+              <div
+                key={item.step}
+                className="rounded-2xl border border-white/10 bg-black/40 p-4"
+              >
+                <div className="flex items-center justify-between text-xs uppercase text-white/50">
+                  <span>{item.step}</span>
+                  <span>{item.title}</span>
+                </div>
+                <p className="mt-3 text-sm text-white/70">{item.description}</p>
+              </div>
+            ))}
           </div>
         </section>
 
-        <section
-          id="contact"
-          className="mt-16 grid gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-10 text-center"
-        >
+        <section className="mt-16 grid gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-10 text-center">
           <h2 className="text-3xl font-semibold">
-            Ready to build something beautiful?
+            Ready to ship the next release?
           </h2>
           <p className="mx-auto max-w-2xl text-sm text-white/70">
-            Tell us about your product and timeline. We’ll reply with a clear
-            plan, estimated scope, and next steps within 48 hours.
+            Tell us what you’re building. We’ll respond with a roadmap, delivery
+            cadence, and the agent pod we’d assemble for you.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="mailto:hello@milbo.co"
+              href="/contact"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
             >
-              Email hello@milbo.co
+              Talk to Milbo
             </Link>
             <Link
-              href="#"
+              href="/services"
               className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60"
             >
-              Download capabilities deck
+              Explore services
             </Link>
           </div>
         </section>
