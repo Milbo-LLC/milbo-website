@@ -41,19 +41,20 @@ const workflow = [
   },
 ];
 
-const useCases = [
+const products = [
   {
-    label: "SendTask",
+    name: "SendTask",
     href: "https://sendtask.ai",
-    detail: "Agent teams platform",
+    description:
+      "Build and run agent teams with the compute, orchestration, and QA they need.",
   },
   {
-    label: "Polygon",
-    detail: "AI-powered CAD platform",
+    name: "Polygon",
+    description: "AI-powered CAD platform for faster iteration.",
   },
   {
-    label: "Memoir",
-    detail: "Journaling app for better memory",
+    name: "Memoir",
+    description: "Journaling app that improves your memory.",
   },
 ];
 
@@ -87,19 +88,15 @@ export default function Home() {
         <section className="grid gap-12 pb-20 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/60">
-              Multi-product SaaS studio
+              We build SaaS products using agents. So can you.
             </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              We build SaaS products powered by agent teams.
+              We build SaaS products using agents. So can you.
             </h1>
             <p className="max-w-xl text-lg text-white/70">
               Milbo is a product company building a portfolio of SaaS tools. Our
-              flagship product,{
-              " "}
-              <Link href="https://sendtask.ai" className="underline">
-                SendTask
-              </Link>
-              , gives customers the compute, infrastructure, and tools to create
+              flagship product, <Link href="https://sendtask.ai" className="underline">SendTask</Link>,
+              gives customers the compute, infrastructure, and tools to create
               their own agent teams through intuitive conversations.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -116,21 +113,25 @@ export default function Home() {
                 See the workflow
               </Link>
             </div>
-            <div className="flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em] text-white/50">
-              {useCases.map((item) => (
-                <span
-                  key={item.label}
-                  className="rounded-full border border-white/10 px-3 py-1"
+            <div className="grid gap-4 sm:grid-cols-3">
+              {products.map((product) => (
+                <div
+                  key={product.name}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-4"
                 >
-                  {item.href ? (
-                    <Link href={item.href} className="underline">
-                      {item.label}
-                    </Link>
-                  ) : (
-                    item.label
-                  )}
-                  {item.detail ? ` · ${item.detail}` : ""}
-                </span>
+                  <h3 className="text-base font-semibold">
+                    {product.href ? (
+                      <Link href={product.href} className="underline">
+                        {product.name}
+                      </Link>
+                    ) : (
+                      product.name
+                    )}
+                  </h3>
+                  <p className="mt-2 text-sm text-white/70">
+                    {product.description}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
