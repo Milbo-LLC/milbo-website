@@ -1,43 +1,42 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+
 import { notoSansDisplay } from "./layout";
 
 const capabilities = [
   {
-    title: "Portfolio mindset",
-    description:
-      "We build multiple SaaS products in parallel, sharing learnings across the stack.",
+    title: "Portfolio execution",
+    description: "We run multiple SaaS tracks in parallel with shared infra and repeatable playbooks.",
   },
   {
-    title: "Agent-powered execution",
-    description:
-      "Teams of agents handle research, product, engineering, QA, and ops with human oversight.",
+    title: "Agent operating system",
+    description: "Dedicated agent pods handle research, engineering, QA, and ops with tight oversight.",
   },
   {
-    title: "Always shipping",
-    description:
-      "Fast release cycles, continuous QA, and tight feedback loops keep momentum high.",
+    title: "Release discipline",
+    description: "Short cycles, measurable quality gates, and a bias toward shipping.",
   },
 ];
 
 const workflow = [
   {
     step: "01",
-    title: "Find the wedge",
-    description:
-      "Identify a clear pain point, validate demand, and define the MVP scope.",
+    title: "Define the wedge",
+    description: "Confirm the pain, scope the MVP, and lock the success metrics.",
   },
   {
     step: "02",
     title: "Build with agents",
-    description:
-      "Agent pods execute design, engineering, and QA while we oversee the strategy.",
+    description: "Pods execute design, build, and QA while we steer product strategy.",
   },
   {
     step: "03",
-    title: "Launch + iterate",
-    description:
-      "Ship fast, learn from users, and compound improvements across the portfolio.",
+    title: "Launch + compound",
+    description: "Ship, learn, and iterate across the portfolio with shared momentum.",
   },
 ];
 
@@ -45,16 +44,15 @@ const products = [
   {
     name: "SendTask",
     href: "https://sendtask.ai",
-    description:
-      "Build and run agent teams with the compute, orchestration, and QA they need.",
+    description: "Agent team builder with managed runtime, orchestration, and QA.",
   },
   {
     name: "Polygon",
-    description: "AI-powered CAD platform for faster iteration.",
+    description: "AI-assisted CAD for faster iteration and clearer handoffs.",
   },
   {
     name: "Memoir",
-    description: "Journaling app that improves your memory.",
+    description: "Memory-first journaling that turns notes into recallable insights.",
   },
 ];
 
@@ -64,110 +62,110 @@ export default function Home() {
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-8">
         <div className="flex items-center gap-3">
           <Image src="/logo.svg" alt="Milbo logo" width={40} height={40} />
-          <span
-            className={`text-lg font-semibold tracking-tight ${notoSansDisplay.className}`}
-          >
+          <span className={cn("text-lg font-semibold tracking-tight", notoSansDisplay.className)}>
             milbo
           </span>
         </div>
-        <div className="text-xs uppercase tracking-[0.3em] text-white/50">
-          We build SaaS products using agents. So can you.
+        <div className="hidden text-xs uppercase tracking-[0.3em] text-white/60 lg:block">
+          We build with agents. So can you.
         </div>
         <Link
           href="https://sendtask.ai"
-          className="rounded-full border border-white/20 px-5 py-2 text-sm font-medium transition hover:border-white/60"
+          className={cn(
+            "rounded-full border border-white/20 bg-transparent px-4 py-2 text-sm font-medium text-white transition hover:border-white/60 hover:bg-white/5"
+          )}
         >
           SendTask.ai
         </Link>
       </header>
 
       <main className="mx-auto w-full max-w-6xl px-6 pb-24">
-        <section className="grid gap-12 pb-20 pt-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+        <section className="grid gap-12 pb-20 pt-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.25em] text-white/60">
-              We build SaaS products using agents. So can you.
-            </div>
+            <Badge className="border-white/15 bg-white/5 text-white/70">
+              Product studio
+            </Badge>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              We build SaaS products using agents. So can you.
+              We build with agents. So can you.
             </h1>
             <p className="max-w-xl text-lg text-white/70">
-              Milbo is a product company building a portfolio of SaaS tools. Our
-              flagship product, <Link href="https://sendtask.ai" className="underline">SendTask</Link>,
-              gives customers the compute, infrastructure, and tools to create
-              their own agent teams through intuitive conversations.
+              Milbo is a product studio building SaaS companies with agent teams. Our flagship product,
+              {" "}
+              <Link href="https://sendtask.ai" className="underline">
+                SendTask
+              </Link>
+              , gives builders the compute, orchestration, and QA they need to run reliable agent pods.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/contact"
-                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
+                className={cn(
+                  "rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
+                )}
               >
                 Start a project
               </Link>
               <Link
-                href="/process"
-                className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60"
+                href="/#process"
+                className={cn(
+                  "rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/5"
+                )}
               >
                 See the workflow
               </Link>
             </div>
             <div className="grid gap-4 sm:grid-cols-3">
               {products.map((product) => (
-                <div
-                  key={product.name}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-4"
-                >
-                  <h3 className="text-base font-semibold">
-                    {product.href ? (
-                      <Link href={product.href} className="underline">
-                        {product.name}
-                      </Link>
-                    ) : (
-                      product.name
-                    )}
-                  </h3>
-                  <p className="mt-2 text-sm text-white/70">
-                    {product.description}
-                  </p>
-                </div>
+                <Card key={product.name} className="border-white/10 bg-white/5 text-white">
+                  <CardHeader>
+                    <CardTitle className="text-base">
+                      {product.href ? (
+                        <Link href={product.href} className="underline">
+                          {product.name}
+                        </Link>
+                      ) : (
+                        product.name
+                      )}
+                    </CardTitle>
+                    <CardDescription className="text-white/60">
+                      {product.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
               ))}
             </div>
           </div>
+
           <div className="relative">
-            <div className="absolute -left-10 top-10 h-72 w-72 rounded-full bg-indigo-500/30 blur-[120px]" />
-            <div className="absolute -right-8 bottom-0 h-72 w-72 rounded-full bg-teal-400/20 blur-[140px]" />
-            <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-8">
-              <div className="space-y-6">
-                <p className="text-sm uppercase tracking-[0.3em] text-white/50">
-                  Flagship product: SendTask
+            <div className="absolute -left-10 top-10 h-72 w-72 rounded-full bg-indigo-500/25 blur-[120px]" />
+            <div className="absolute -right-8 bottom-0 h-72 w-72 rounded-full bg-teal-400/15 blur-[140px]" />
+            <Card className="relative overflow-hidden border-white/10 bg-white/5 text-white">
+              <CardHeader>
+                <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+                  Flagship: SendTask
                 </p>
-                <h2 className="text-2xl font-semibold">
-                  Build agent teams without managing infra.
-                </h2>
-                <p className="text-sm text-white/70">
-                  SendTask lets customers design their own agent teams while we
-                  provide the runtime, compute, orchestration, and QA that keep
-                  everything reliable. Learn more at{" "}
-                  <Link href="https://sendtask.ai" className="underline">
-                    SendTask.ai
-                  </Link>
-                  .
-                </p>
-                <div className="grid gap-3 text-xs text-white/60">
-                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
-                    <span>Team builder</span>
-                    <span className="text-white/70">Conversation-first</span>
+                <CardTitle className="text-2xl">Build agent teams without managing infra.</CardTitle>
+                <CardDescription className="text-white/60">
+                  SendTask provides the runtime, compute, orchestration, and QA layer so teams can focus on
+                  outcomes.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3 text-xs text-white/60">
+                {[
+                  ["Team builder", "Conversation-first"],
+                  ["Compute + orchestration", "Managed runtime"],
+                  ["QA + monitoring", "Always-on quality"],
+                ].map(([label, value]) => (
+                  <div
+                    key={label}
+                    className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3"
+                  >
+                    <span>{label}</span>
+                    <span className="text-white/70">{value}</span>
                   </div>
-                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
-                    <span>Compute + orchestration</span>
-                    <span className="text-white/70">Managed runtime</span>
-                  </div>
-                  <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
-                    <span>QA + monitoring</span>
-                    <span className="text-white/70">Always-on quality</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+                ))}
+              </CardContent>
+            </Card>
           </div>
         </section>
 
@@ -182,54 +180,51 @@ export default function Home() {
 
         <section
           id="process"
-          className="grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-10 lg:grid-cols-[1.1fr_0.9fr]"
+          className="grid gap-8 rounded-3xl border border-white/10 bg-white/5 p-10 lg:grid-cols-[1.05fr_0.95fr]"
         >
           <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-              How it works
-            </p>
-            <h2 className="text-3xl font-semibold">
-              How we build the portfolio.
-            </h2>
+            <p className="text-xs uppercase tracking-[0.3em] text-white/50">How it works</p>
+            <h2 className="text-3xl font-semibold">A clear, repeatable build system.</h2>
             <p className="text-sm text-white/70">
-              Each SaaS product is backed by agent pods that help us move faster
-              while maintaining quality. SendTask is the first of many.
+              We combine agent pods with product leadership to ship quickly without losing quality.
             </p>
           </div>
           <div className="grid gap-4">
             {workflow.map((item) => (
-              <div
-                key={item.step}
-                className="rounded-2xl border border-white/10 bg-black/40 p-4"
-              >
-                <div className="flex items-center justify-between text-xs uppercase text-white/50">
-                  <span>{item.step}</span>
-                  <span>{item.title}</span>
-                </div>
-                <p className="mt-3 text-sm text-white/70">{item.description}</p>
-              </div>
+              <Card key={item.step} className="border-white/10 bg-black/40 text-white">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center justify-between text-xs uppercase text-white/50">
+                    <span>{item.step}</span>
+                    <span>{item.title}</span>
+                  </div>
+                  <CardDescription className="text-white/70">
+                    {item.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
             ))}
           </div>
         </section>
 
         <section className="mt-16 grid gap-6 rounded-3xl border border-white/10 bg-gradient-to-br from-white/10 via-white/5 to-transparent p-10 text-center">
-          <h2 className="text-3xl font-semibold">
-            Want early access to SendTask?
-          </h2>
+          <h2 className="text-3xl font-semibold">Want early access to SendTask?</h2>
           <p className="mx-auto max-w-2xl text-sm text-white/70">
-            Join the waitlist to help shape the first product in the Milbo
-            portfolio.
+            Join the waitlist and help shape the first product in the Milbo portfolio.
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="https://sendtask.ai"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
+              className={cn(
+                "rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
+              )}
             >
               Join the SendTask waitlist
             </Link>
             <Link
               href="/contact"
-              className="rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60"
+              className={cn(
+                "rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/5"
+              )}
             >
               Talk to Milbo
             </Link>
