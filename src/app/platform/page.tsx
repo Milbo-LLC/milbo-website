@@ -57,12 +57,12 @@ export default function PlatformPage() {
             Platform
           </p>
           <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-            The infrastructure layer for agent teams.
+            Make agent teams production-ready fast.
           </h1>
           <p className="max-w-2xl text-sm text-white/70">
-            Milbo gives your customers the tools to build and run their own agent
-            teams. We provide the compute, orchestration, and guardrails—not a
-            managed services layer.
+            Milbo replaces months of infra work with a ready-to-run platform for
+            agent teams—compute, orchestration, QA, and monitoring included. You
+            stay in control of the team design and workflows.
           </p>
         </section>
 

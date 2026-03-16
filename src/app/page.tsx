@@ -4,19 +4,19 @@ import { notoSansDisplay } from "./layout";
 
 const capabilities = [
   {
-    title: "Agent team builder",
+    title: "Launch-ready in days",
     description:
-      "Create specialized agent teams through intuitive tools and natural language workflows.",
+      "Skip months of infra work—spin up agent teams with built-in tooling and guardrails.",
   },
   {
-    title: "Infrastructure + compute",
+    title: "Reliability by default",
     description:
-      "We provide the runtime, orchestration, and tooling so your agents stay reliable.",
+      "Automated QA, monitoring, and instant issue routing keep workflows stable.",
   },
   {
-    title: "Always-on delivery",
+    title: "Scale without rewrites",
     description:
-      "Ship faster with automated QA, continuous monitoring, and instant issue routing.",
+      "Compute and orchestration scale as teams grow, without rebuilding pipelines.",
   },
 ];
 
@@ -81,12 +81,12 @@ export default function Home() {
               Agent team infrastructure
             </div>
             <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Build and run agent teams on your terms.
+              Launch agent teams in days, not months.
             </h1>
             <p className="max-w-xl text-lg text-white/70">
-              Milbo gives you the compute, infrastructure, and tools to build
-              agent teams through conversations—not a managed services layer. You
-              stay in control while agents do the work.
+              Milbo is the infrastructure layer that turns a workflow idea into
+              a running agent team—complete with compute, orchestration, QA, and
+              monitoring. You design the team. We make it reliable and scalable.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
@@ -122,12 +122,12 @@ export default function Home() {
                   Agent teams, not managed services
                 </p>
                 <h2 className="text-2xl font-semibold">
-                  The infrastructure layer for agent-led work.
+                  Turn workflows into production-grade agent teams.
                 </h2>
                 <p className="text-sm text-white/70">
-                  Compose teams, manage workloads, and monitor quality with a
-                  platform built for speed. Your customers decide the workflows—
-                  Milbo powers the runtime.
+                  Milbo handles the hard parts—compute, orchestration, QA, and
+                  monitoring—so your teams launch faster and stay reliable as
+                  they scale.
                 </p>
                 <div className="grid gap-3 text-xs text-white/60">
                   <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/40 px-4 py-3">
@@ -166,11 +166,12 @@ export default function Home() {
               How it works
             </p>
             <h2 className="text-3xl font-semibold">
-              Build agent teams with intuitive tools.
+              The fastest path to reliable agent operations.
             </h2>
             <p className="text-sm text-white/70">
-              You design the team. We provide the infrastructure, orchestration,
-              and guardrails to keep workflows reliable.
+              You own the workflow and team design. Milbo delivers the runtime,
+              testing, and monitoring that make agent teams dependable in
+              production.
             </p>
           </div>
           <div className="grid gap-4">
