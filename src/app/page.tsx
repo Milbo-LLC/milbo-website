@@ -70,17 +70,14 @@ export default function Home() {
             milbo
           </span>
         </div>
-        <nav className="hidden items-center gap-8 text-sm text-white/70 md:flex">
-          <Link href="/platform">Platform</Link>
-          <Link href="/process">Process</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
-        </nav>
+        <div className="text-xs uppercase tracking-[0.3em] text-white/50">
+          We build SaaS products using agents. So can you.
+        </div>
         <Link
-          href="/contact"
+          href="https://sendtask.ai"
           className="rounded-full border border-white/20 px-5 py-2 text-sm font-medium transition hover:border-white/60"
         >
-          Book a call
+          SendTask.ai
         </Link>
       </header>
 
