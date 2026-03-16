@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -72,8 +71,9 @@ export default function Home() {
         </div>
         <Link
           href="https://sendtask.ai"
-          className={cn(buttonVariants({ variant: "outline", size: "sm" }),
-            "rounded-full border-white/20 bg-transparent text-white hover:border-white/60 hover:bg-white/5")}
+          className={cn(
+            "rounded-full border border-white/20 bg-transparent px-4 py-2 text-sm font-medium text-white transition hover:border-white/60 hover:bg-white/5"
+          )}
         >
           SendTask.ai
         </Link>
@@ -99,14 +99,17 @@ export default function Home() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/contact"
-                className={cn(buttonVariants({ size: "lg" }), "rounded-full bg-white text-black hover:bg-white/90")}
+                className={cn(
+                  "rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
+                )}
               >
                 Start a project
               </Link>
               <Link
                 href="/#process"
-                className={cn(buttonVariants({ variant: "outline", size: "lg" }),
-                  "rounded-full border-white/20 text-white hover:border-white/60 hover:bg-white/5")}
+                className={cn(
+                  "rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/5"
+                )}
               >
                 See the workflow
               </Link>
@@ -211,14 +214,17 @@ export default function Home() {
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="https://sendtask.ai"
-              className={cn(buttonVariants({ size: "lg" }), "rounded-full bg-white text-black hover:bg-white/90")}
+              className={cn(
+                "rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-white/90"
+              )}
             >
               Join the SendTask waitlist
             </Link>
             <Link
               href="/contact"
-              className={cn(buttonVariants({ variant: "outline", size: "lg" }),
-                "rounded-full border-white/20 text-white hover:border-white/60 hover:bg-white/5")}
+              className={cn(
+                "rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/60 hover:bg-white/5"
+              )}
             >
               Talk to Milbo
             </Link>
